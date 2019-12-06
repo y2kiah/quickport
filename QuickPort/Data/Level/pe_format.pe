@@ -1,0 +1,33 @@
+Particle Effect file format
+
+[POSRAND]
+f,f,f		// Origin randomness factor
+
+[DIRECTION]
+f,f,f		// Initial direction vector of particles
+
+[DIRRAND]
+f,f,f
+[ACCELERATION]
+f,f,f		// Acceleration vector
+
+[COLORI]
+f,f,f		// Initial color
+
+[COLORF]
+f,f,f		// Final color
+
+[LIGHT]
+b		// Does light effect it or not
+
+[RADIUS]
+f		// Radius in feet
+
+[LIFESPAN]
+f		// Lifespan in seconds
+
+[LIFERAND]
+f
+
+[NUMPARTICLES]
+i		// Number of particles in system on low detail

@@ -1,0 +1,63 @@
+-------------------------
+------- Jeff Kiah -------
+---- .3D file format ----
+-------------------------
+
+FACE COUNT:
+	(Integer, number of faces in the mesh)
+
+	NumFaces
+
+TEXTURE COUNT:
+	(Integer, number of textures mesh uses)
+
+	NumTextures
+
+TEXTURE FILENAMES:
+	(In order of material numbers)	
+	
+	filename.ext
+
+FACE INFO CLUSTERS:
+	(All v*.* are floats, MaterialId is an integer telling colors and textures)
+
+	v1.x	v1.y	v1.z	
+	v1.u	v1.v
+	v1.c.r	v1.c.g	v1.c.b
+	v2.x	v2.y	v2.z	
+	v2.u	v2.v
+	v2.c.r	v2.c.g	v2.c.b
+	v3.x	v3.y	v3.z	
+	v3.u	v3.v
+	v3.c.r	v3.c.g	v3.c.b
+	MaterialId
+
+EXAMPLE:
+----------------------------------------------------------------------------
+2
+2
+
+texture1.bmp
+texture2.bmp
+
+.....
+...
+.....
+...
+.....
+...
+...
+...
+...
+.
+
+.....
+...
+.....
+...
+.....
+...
+...
+...
+...
+.

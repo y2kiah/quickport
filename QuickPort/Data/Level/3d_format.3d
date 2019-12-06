@@ -1,0 +1,13 @@
+3D file format
+
+[TEXTURE] = i
+  "name.bmp"
+  ...
+
+[VERTEX] = i
+  f,f,f,f,f		// x,y,z,u,v
+  ...
+
+[POLYGON] = i
+  i,i,i,i,f,f,f		// vertex 1 id, vertex 2 id, vertex 3 id, texture id, normal x,y,z
+  ...

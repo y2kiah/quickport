@@ -1,0 +1,70 @@
+Level file format
+
+[INFO]
+  LEVELNAME = "name"
+  FOGCOLOR = f,f,f     // r,g,b
+  FOGSTART = f
+  FOGEND = f
+
+[TEXTURE]
+  NUMTEXTURES = i  // textures used on walls will be put in this list in correct order for use with wall ID's
+                   // textures that aren't on the list (ie. object's textures) will be added to the end of it at load time
+  "name.bmp"
+  ...
+
+[OBJECT]           // only Objects use meshes, so a mesh list will be compiled at load time by checking the required mesh filenames in each
+  NUMOBJECTS = i   //  successive .ob file and appending new ones to the list, while assigning the correct numeric values
+
+  "name.ob"        // the .3d file will have a list of textures it needs to use, these will be checked against current texture list names and
+  ...              // assigned appropriate numeric values, if they are not in the list they'll be appended to the end of it at load time
+
+[PARTICLE]
+  NUMPARTICLES = i
+
+  "name.pe"        // .pe for particle effect, a list of sector based particle effects. object based particle effects will be appended to the
+  ...		   // list at load time if not already present
+
+[SECTOR]
+  {
+  VERTICES = i
+    f,f            // x,z
+    ...
+  WALLS = i
+    f,f,f,f,i      // x1, z1, x2, z2, textureid
+    ...
+  PORTALS = i
+    f,f,f,f,i,b,i,f,i,i,b,b   // x1,z1,x2,z2,linksectorid,textured?,textureid,opacity,lowertextureid,uppertextureid,traverse?,mirror?
+    ...
+  FLOOR = f,i,b               // y,textureid,reflective?
+  CEILING = f,i
+  AMBIENTCOLOR = f,f,f        // r,g,b
+  OBJECT = i
+    i,f,f,f,b,i,##	      // objectid,x,y,z,controlswitch?,controlid,## - see bottom for description
+    ...
+  PARTICLE = i
+    i,f,f,f		      // particleid,x,y,z
+    ...
+  SWITCH = i
+    DOOR,i,i
+    ELEVATOR,
+    LIGHT,
+  }
+  ...
+
+[SKYBOX]	// to be added
+
+[TERRAIN]	// to be added
+
+
+##
+  next in the list is control type:
+  SECTOR/OBJECT/PARTICLE
+  and basically describes what the object will act upon
+  the control id tells what the id number is of whatever it controls, could be a sector, particle system, or object
+
+  If it's SECTOR
+    next will be what in the SECTOR it controls
+    DOOR,ELEVATOR,LIGHT
+    the sector structure will already have the info about each switch that can be changed, the object just turns the switch on and off
+
+

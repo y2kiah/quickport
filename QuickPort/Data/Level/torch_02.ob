@@ -1,0 +1,27 @@
+[NAME]
+"Torch 2"
+
+[CATEGORY]
+STATIC
+
+[CLASS]
+INANIMATE
+
+[TYPE]
+MACHINE
+
+[LIFE]
+PERMANENT
+
+[ALIVEMESH]
+"torch_02.3d"
+
+[PARTICLE]
+1
+"torch_02.pe",0,1,1
+
+[SCALEY]
+1.5
+
+[SOUND]
+""

@@ -1,0 +1,38 @@
+Object file format
+
+[NAME] = ""
+[CATEGORY] = DYNAMIC/STATIC	// does it move around in our world or not
+[CLASS] = ANIMATE/INANIMATE	// does the object have animation
+[TYPE] = ACTOR/MACHINE		// can it be manipulated by the player or not
+[LIFE] = DESTRUCTIBLE/PERMANENT	// can it be destroyed or not
+[SIDE] = ENEMY/FRIENDLY		// Will it attack you or not
+[SPEED] = f
+[ACCELERATION] = f		// in ft/s/s
+[DECELERATION] = f		// in %, ex. decelerate TO 10% of current total every second, so 0.1
+[LIFEPOINTS] = i
+[ARMOUR] = i
+[ATTACKPOINTS] = i
+[DEFENSEPOINTS] = i
+[REACTIONTIME] = f		// in seconds
+[ALIVEMESH] = "name.3d"
+[DEADMESH] = "name.3d"
+[SCALEY] = f			// The height of the object (so it's scaled correctly from the mesh coords)
+[ANIMATION]
+  MOVE = i,f			// numframes,total time of entire sequence in seconds
+    "name.3d"
+    ...
+  ATTACK = i,f
+    "name.3d"
+    ...
+  DEFEND = i,f
+    "name.3d"
+    ...
+  DIE = i,f
+    "name.3d"
+    ...
+[PARTICLE] = i
+  "name.pe",f,f,f		// x,y,z of origin in model space
+  ...
+
+[SOUND]
+  "name.wav",i,i		// which enum value to use (sound event id),stream = 1 don't stream = 0
